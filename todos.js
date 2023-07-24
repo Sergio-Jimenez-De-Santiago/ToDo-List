@@ -6,12 +6,16 @@ let todosStorage = [];
 //array of objects that is empty and then will be populated with the local storage info
 let stored;
 //array of objects to help comunication between "normal" code and local storage
-if (localStorage.length){
-    //if the local storage is not empty, get the local storage data and put it into stored to then add to html
+
+if (localStorage.getItem("todos")) {
+    //if the local storage has a todos thing there go on
     stored = JSON.parse(localStorage.getItem('todos'));
     //get the array of objects in json format from local storage and parse it into an array (save in stored array)
-    stored.forEach(task => addTodo(task.data));
-    //go through the array and call the addTodo func to update the html 
+    if (Array.isArray(stored)) {
+        //check if the array is not empty
+        stored.forEach(task => addTodo(task.data));
+        //go through the array and call the addTodo func to update the html
+    }
 }
 
 function addTodo(text){
