@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-    max-width: 400px;
+    max-width: 600px;
 }
 
 input[type=text],
@@ -11,7 +11,11 @@ input[type=text]:focus {
     color: #fff;
     border: none;
     background: rgba(0, 0, 0, 0.2);
-    max-width: 400px;
+    max-width: 600px;
+}
+
+.icons {
+    margin-left: auto;
 }
 
 .todos li {
@@ -20,6 +24,11 @@ input[type=text]:focus {
 
 .delete {
     cursor: pointer;
+}
+
+.edit {
+    cursor: pointer;
+    margin-right: 5px;
 }
 
 .displayNone {
